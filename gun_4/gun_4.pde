@@ -1,13 +1,18 @@
 Crosshair cross = new Crosshair(0, 12, 1, 0, 50, 44, 11);
 Ball track = null;
 
+
+Timer timer;
+
+final int AfterImageDelTimer = 0;
+final int AfterImageDelFreq = 333;
+
 void setup()
 {
   size(600, 400);
+ 
+  timer = new Timer();
 }
-
-final int AfterImageDelFreq = 20;
-int TimeOutForDelAfterImage = -1;
 
 void draw()
 {
@@ -35,29 +40,25 @@ void draw()
           track.createAfterImage(firedX, firedY);
         }
       }
-      
-      TimeOutForDelAfterImage = AfterImageDelFreq;
+
+      if (!timer.addTimer(AfterImageDelTimer, AfterImageDelFreq, true))
+      {
+        timer.enableTimer(AfterImageDelTimer, true, true);
+      }
     }
   }
   else
   {
     cross.release();
   }
-  
-  if (TimeOutForDelAfterImage != -1)
+
+  int timer_hit = timer.update(1000.0 / frameRate);
+  if (timer_hit == AfterImageDelTimer)
   {
-    TimeOutForDelAfterImage--;
-    if (TimeOutForDelAfterImage == 0)
+    if (!track.deleteAfterImage())
     {
-      if (!track.deleteAfterImage())
-      {
-        track = null;
-        TimeOutForDelAfterImage = -1;
-      }
-      else
-      {
-        TimeOutForDelAfterImage = AfterImageDelFreq;
-      }
+      track = null;
+      timer.enableTimer(AfterImageDelTimer, false, true);
     }
   }
 
