@@ -22,7 +22,7 @@ void setup()
 
   gun = new Gun();
   base = new Base(430, 10, 160, 380, 100, 10);
-  enemies = new Enemies(10, 10, 0, 40, 38, 10, 0, EnemyPower);
+  enemies = new Enemies(10, 10, 0, 40, 8, 10, 0, EnemyPower);
   timer = new Timer();
 
   timer.addTimer(SpawnEnemyTimer, SpawnEnemyFreq, true);

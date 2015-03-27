@@ -23,7 +23,7 @@ class Gun
     {
       ret.fired = true;
 
-      float fireError = 0.2 * cross.getRejection();
+      float fireError = 0.5 * cross.getRejection();
 
       ret.x = mouseX + random(-fireError, fireError);
       ret.y = mouseY + random(-fireError, fireError);

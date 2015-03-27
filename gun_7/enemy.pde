@@ -57,6 +57,7 @@ class Enemy
   {
     if (b.isInAttackArea(enemyX, enemyY, enemyImage.width, enemyImage.height))
     {
+      println("attack on" + this);
       b.attacked(attackPower);
       return true;
     }
