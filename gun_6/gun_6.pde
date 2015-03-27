@@ -48,7 +48,6 @@ void draw()
     }
   }
 
-  noStroke();
   enemy.display();
 
   gun.display();

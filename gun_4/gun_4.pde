@@ -62,12 +62,10 @@ void draw()
     }
   }
 
-  stroke(0);
   cross.display(mouseX, mouseY);
 
   if (track != null)
   {
-    noStroke();
     track.display();
   }
 }

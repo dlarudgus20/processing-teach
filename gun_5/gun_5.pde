@@ -70,8 +70,6 @@ void draw()
     }
   }
 
-  noStroke();
-
   enemy.display();
 
   if (track != null)
@@ -79,7 +77,6 @@ void draw()
     track.display();
   }
 
-  stroke(0);
   cross.display(mouseX, mouseY);
 }
 

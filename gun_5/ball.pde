@@ -69,6 +69,8 @@ class Ball
 
   void display()
   {
+    noStroke();
+
     float alpha = alpha(ballColor);
     float radius = mainRadius;
   

@@ -73,7 +73,7 @@ class Ball
 
     float alpha = alpha(ballColor);
     float radius = mainRadius;
-  
+
     fill(red(ballColor), green(ballColor), blue(ballColor), alpha);
     ellipse(ballX, ballY, radius, radius);
   

@@ -51,6 +51,7 @@ class Crosshair
 
   void display(float x, float y)
   {
+    stroke(0);
     line(x-crossLength-rejection, y, x-crossGap-rejection, y);
     line(x+crossLength+rejection, y, x+crossGap+rejection, y);
     line(x, y-crossLength-rejection, x, y-crossGap-rejection);

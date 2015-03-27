@@ -39,6 +39,8 @@ class Crosshair
 
   void display()
   {
+    stroke(0);
+
     if(rejection>50)
     {
       rejection=50;
