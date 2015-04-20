@@ -15,7 +15,7 @@ class Gun
     float x, y;
     boolean fired;
   }
-  FireInfo fire()
+  FireInfo fire(int x, int y)
   {
     FireInfo ret = new FireInfo();
 
@@ -25,8 +25,8 @@ class Gun
 
       float fireError = 0.5 * cross.getRejection();
 
-      ret.x = mouseX + random(-fireError, fireError);
-      ret.y = mouseY + random(-fireError, fireError);
+      ret.x = x + random(-fireError, fireError);
+      ret.y = y + random(-fireError, fireError);
   
       if (track == null)
       {

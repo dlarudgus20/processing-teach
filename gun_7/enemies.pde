@@ -28,7 +28,7 @@ class Enemies
     for (int i = 0; i < countOfSpawn_; i++)
     {
       float x = spawnX_ + i * spawnXGap_;
-      float y = spawnYGap_ + i * spawnYGap_;
+      float y = spawnY_ + i * spawnYGap_;
       enemyList_.add(new Enemy(x, y, enemyPower_));
     }
   }

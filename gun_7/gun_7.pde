@@ -35,7 +35,7 @@ void draw()
 
   if (mousePressed)
   {
-    Gun.FireInfo fi = gun.fire();
+    Gun.FireInfo fi = gun.fire(mouseX, mouseY);
     if (fi.fired)
     {
       if (!timer.addTimer(AfterImageDelTimer, AfterImageDelFreq, true))
